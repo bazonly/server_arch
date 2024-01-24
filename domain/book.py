@@ -7,6 +7,6 @@ from dataclasses import dataclass
 class Book:
     title: str
     description: str
-    publish_year: int
+    publish_year: datetime.datetime
     pages_count: int
     created_at: datetime.datetime

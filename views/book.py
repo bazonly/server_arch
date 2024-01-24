@@ -13,7 +13,7 @@ bp = Blueprint("book", __name__)
 def get_books():
     ctx = get_context(current_app)
 
-    return json.dumps([dataclasses.asdict(b) for b in ctx.book_service.get()])
+    return json.dumps([dataclasses.asdict(b, dict_factory=dict) for b in ctx.book_service.get()], ensure_ascii=False)
 
 
 @bp.route("/", methods=["POST"])
